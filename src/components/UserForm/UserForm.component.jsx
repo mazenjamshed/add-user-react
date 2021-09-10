@@ -2,14 +2,15 @@ import React, { useState } from 'react';
 import CustomButton from '../CustomButton/CustomButton.component';
 import UserInput from '../UserInput/UserInput.component';
 
-const UserForm = () => {
+const UserForm = (props) => {
   const [name, setName] = useState('');
   const [age, setAge] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(name);
-    console.log(age);
+    // console.log(name);
+    // console.log(age);
+    props.onAddUser(name, age);
 
     setName('');
     setAge('');
